@@ -1,7 +1,7 @@
 import React from 'react'
 
-const TeacherList = () => {
-  return <h1>TeacherList</h1>
+const TeacherForm = () => {
+  return <h1>TeacherForm</h1>
 }
 
-export default TeacherList
+export default TeacherForm

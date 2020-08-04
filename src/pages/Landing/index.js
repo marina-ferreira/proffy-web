@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { Link } from 'react-router-dom'
+
 import logo from 'assets/images/logo.svg'
 import landingImg from 'assets/images/landing.svg'
 import studyIcon from 'assets/images/icons/study.svg'
@@ -16,29 +18,29 @@ import {
 
 const Landing = () => {
   return (
-    <Container id="page-landing">
-      <div id="page-landing-content" className="container">
-        <LogoContainer className="logo-container">
+    <Container>
+      <div>
+        <LogoContainer>
           <img src={logo} alt="Proffy" />
 
           <h2>Your online study platform</h2>
         </LogoContainer>
 
-        <HeroImage src={landingImg} alt="Your online study platform" className="hero-image" />
+        <HeroImage src={landingImg} alt="Your online study platform" />
 
-        <ButtonsContainer className="buttons-container">
-          <a href="" className="study">
+        <ButtonsContainer>
+          <Link to="/study" className="study">
             <img src={studyIcon} alt="Study"/>
             Study
-          </a>
+          </Link>
 
-          <a href="" className="teach">
+          <Link to="/teach" className="teach">
             <img src={teachIcon} alt="Teach"/>
             Teach
-          </a>
+          </Link>
         </ButtonsContainer>
 
-        <TotalConnections className="total-connections">
+        <TotalConnections>
           A total of 200 connections achieved
           <img src={purpleHeartIcon} alt="Purple heart"/>
         </TotalConnections>
