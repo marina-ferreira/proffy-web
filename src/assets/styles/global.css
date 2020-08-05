@@ -48,6 +48,7 @@ button,
 textarea,
 body {
   font: 500 1.6rem Poppin;
+  color: var(--color-text-base);
 }
 
 .container {
