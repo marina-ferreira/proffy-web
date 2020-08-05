@@ -5,7 +5,7 @@ export const Header = styled.header`
   flex-direction: column;
   background: var(--color-primary);
 
-  div {
+  > div {
     width: 90%;
     margin: 0 auto;
     padding: 1.6rem 0;
@@ -29,7 +29,7 @@ export const Header = styled.header`
     }
   }
 
-  p {
+  > section {
     width: 90%;
     margin: 0 auto;
     position: relative;
@@ -39,6 +39,29 @@ export const Header = styled.header`
       font: 700 3.6rem Archivo;
       line-height: 4.2rem;
       color: var(--color-title-in-primary)
+    }
+  }
+
+  @media (min-width: 700px) {
+    height: 340px;
+
+    > div {
+      max-width: 1100px;
+    }
+
+    > section {
+      flex: 1;
+      max-width: 740px;
+      margin: 0 auto;
+      padding-bottom: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+
+      strong {
+        max-width: 350px;
+      }
     }
   }
 `

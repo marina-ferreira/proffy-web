@@ -6,7 +6,7 @@ import backIcon from 'assets/images/icons/back.svg'
 
 import { Header } from './styles'
 
-const PageHeader = ({ title }) => {
+const PageHeader = ({ title, children }) => {
   return (
     <Header>
       <div>
@@ -16,9 +16,11 @@ const PageHeader = ({ title }) => {
         <img src={logo} alt="Proffy" />
       </div>
 
-      <p>
+      <section>
         <strong>{title}</strong>
-      </p>
+
+        {children}
+      </section>
     </Header>
   )
 }
