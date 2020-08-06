@@ -40,6 +40,15 @@ export const Header = styled.header`
       line-height: 4.2rem;
       color: var(--color-title-in-primary)
     }
+
+    p {
+      max-width: 30rem;
+      font-size: 1.8rem;
+      font-family: Poppins;
+      line-height: 2.6rem;
+      color: var(--color-text-in-primary);
+      margin-top: 2.4rem;
+    }
   }
 
   @media (min-width: 700px) {
