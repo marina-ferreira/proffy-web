@@ -3,7 +3,7 @@ import React from 'react'
 import api from 'services/api'
 
 import whatsappIcon from 'assets/images/icons/whatsapp.svg'
-import { Article } from './styles'
+import { Article, Header, Footer } from './styles'
 
 const TeacherItem = ({ teacher }) => {
   const { subject, cost, name, avatar, whatsapp, bio } = teacher
@@ -14,18 +14,18 @@ const TeacherItem = ({ teacher }) => {
 
   return (
     <Article>
-      <header>
+      <Header>
         <img src={avatar} alt={name} />
 
         <div>
           <strong>{name}</strong>
           <span>{subject}</span>
         </div>
-      </header>
+      </Header>
 
       <p>{bio}</p>
 
-      <footer>
+      <Footer>
         <p>
           Hour rate
           <strong>R$ {cost}</strong>
@@ -40,7 +40,7 @@ const TeacherItem = ({ teacher }) => {
           <img src={whatsappIcon} alt="Whatsapp" />
           Entrar em contato
         </a>
-      </footer>
+      </Footer>
     </Article>
   )
 }
