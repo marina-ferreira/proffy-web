@@ -64,7 +64,11 @@ export const Main = styled.main`
     }
   }
 
-  div + .textarea {
+  .Input + .Textarea,
+  .Select + .Input {
+    margin-top: 2.4rem;
+  }
+
     margin-top: 2.4rem;
   }
 

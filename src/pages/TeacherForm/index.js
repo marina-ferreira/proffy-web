@@ -3,6 +3,7 @@ import React from 'react'
 import PageHeader from 'components/PageHeader'
 import Input from 'components/Input'
 import Textarea from 'components/Textarea'
+import Select from 'components/Select'
 
 import warningIcon from 'assets/images/icons/warning.svg'
 import { Container, Main } from './styles'
@@ -29,7 +30,18 @@ const TeacherForm = () => {
           <fieldset>
             <legend>About the class</legend>
 
-            <Input type="text" id="subject" label="Subject" />
+            <Select
+              name="subject"
+              label="Subject"
+              options={[
+                { value: 'arts', label: 'Arts' },
+                { value: 'biology', label: 'Biology' },
+                { value: 'sciences', label: 'Sciences' },
+                { value: 'history', label: 'History' },
+                { value: 'chemistry', label: 'Chemistry' },
+                { value: 'portuguese', label: 'Portuguese' }
+              ]}
+            />
             <Input type="text" id="cost" label="Hour rate" />
           </fieldset>
 
