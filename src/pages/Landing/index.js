@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { Link } from 'react-router-dom'
+
+import api from 'services/api'
 
 import logo from 'assets/images/logo.svg'
 import landingImg from 'assets/images/landing.svg'
@@ -17,6 +19,17 @@ import {
 } from './styles'
 
 const Landing = () => {
+  const [totalConnections, setTotalConnections] = useState(0)
+
+  useEffect(() => {
+    const fetchConnections = async () => {
+      const connections = await api.get('/connections')
+      setTotalConnections(connections.data.total)
+    }
+
+    fetchConnections()
+  }, [])
+
   return (
     <Container>
       <div>
@@ -41,7 +54,7 @@ const Landing = () => {
         </ButtonsContainer>
 
         <TotalConnections>
-          A total of 200 connections achieved
+          A total of {totalConnections} connections achieved
           <img src={purpleHeartIcon} alt="Purple heart"/>
         </TotalConnections>
       </div>
