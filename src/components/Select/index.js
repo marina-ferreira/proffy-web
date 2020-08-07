@@ -7,7 +7,7 @@ const Select = ({ label, name, options, ...rest }) => {
     <Container className="Select">
       <label htmlFor={name}>{label}</label>
 
-      <select value="" id={name} {...rest}>
+      <select id={name} name={name} {...rest}>
         <option value="" disabled hidden>
           Selecione uma opção
         </option>

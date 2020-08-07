@@ -54,8 +54,6 @@ const TeacherForm = () => {
         history.push('/')
       })
       .catch(() => alert('Class could not be registered.'))
-
-    console.log({ name, avatar, whatsapp, bio, subject, cost, scheduleItems })
   }
 
   return (
