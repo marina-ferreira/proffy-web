@@ -10,6 +10,16 @@ export const Container = styled.div`
       margin-bottom: 6.4rem;
     }
   }
+
+  @media (min-width: 700px) {
+    max-width: 100vw;
+
+    > header {
+      > section {
+        margin-bottom: 0;
+      }
+    }
+  }
 `
 export const Main = styled.main`
   width: 100%;
@@ -80,7 +90,7 @@ export const Main = styled.main`
     button {
       width: 100%;
       height: 5.6rem;
-      background: var(--color-secundary);
+      background: var(--color-secondary);
       color: var(--color-button-text);
       border: 0;
       border-radius: 0.8rem;
@@ -95,6 +105,28 @@ export const Main = styled.main`
 
       &:hover {
         background: var(--color-secundary-dark);
+      }
+    }
+  }
+
+  @media (min-width: 700px) {
+    fieldset {
+      padding: 0 6.4rem;
+    }
+
+    footer {
+      padding: 4.0rem 6.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      p {
+        justify-content: space-between;
+      }
+
+      button {
+        width: 20rem;
+        margin-top: 0;
       }
     }
   }

@@ -2,6 +2,7 @@ import React from 'react'
 
 import PageHeader from 'components/PageHeader'
 import Input from 'components/Input'
+import warningIcon from 'assets/images/icons/warning.svg'
 
 import { Container, Main } from './styles'
 
@@ -18,10 +19,27 @@ const TeacherForm = () => {
           <fieldset>
             <legend>Your info</legend>
 
-            <Input text="text" id="name" label="Full Name" />
-            <Input text="text" id="avatar" label="Avatar" />
-            <Input text="text" id="whatsapp" label="Whatsapp" />
+            <Input type="text" id="name" label="Full Name" />
+            <Input type="text" id="avatar" label="Avatar" />
+            <Input type="text" id="whatsapp" label="Whatsapp" />
           </fieldset>
+
+          <fieldset>
+            <legend>About the class</legend>
+
+            <Input type="text" id="subject" label="Subject" />
+            <Input type="text" id="cost" label="Hour rate" />
+          </fieldset>
+
+          <footer>
+            <p>
+              <img src={warningIcon} alt="Warning" />
+              Warning! <br/>
+              Fill in all inputs
+            </p>
+
+            <button type="button">Salvar cadastro</button>
+          </footer>
         </form>
       </Main>
     </Container>
