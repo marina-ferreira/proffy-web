@@ -9,7 +9,7 @@ import Textarea from 'components/Textarea'
 import Select from 'components/Select'
 
 import warningIcon from 'assets/images/icons/warning.svg'
-import { Container, Main } from './styles'
+import { Container, Main, Legend, Footer, Button, ScheduleItem } from './styles'
 
 const TeacherForm = () => {
   const [name, setName] = useState('')
@@ -66,7 +66,7 @@ const TeacherForm = () => {
       <Main>
         <form onSubmit={handleSubmit}>
           <fieldset>
-            <legend>Your info</legend>
+            <Legend>Your info</Legend>
 
             <Input
               type="text"
@@ -99,7 +99,7 @@ const TeacherForm = () => {
           </fieldset>
 
           <fieldset>
-            <legend>About the class</legend>
+            <Legend>About the class</Legend>
 
             <Select
               name="subject"
@@ -126,15 +126,15 @@ const TeacherForm = () => {
           </fieldset>
 
           <fieldset>
-            <legend>
+            <Legend>
               Available schedules
               <button type="button" onClick={addScheduleItem}>
                 + New Appointment
               </button>
-            </legend>
+            </Legend>
 
             {scheduleItems.map((item, index) => (
-              <section key={index}>
+              <ScheduleItem key={index}>
                 <Select
                   name="week_day"
                   label="Week Day"
@@ -162,19 +162,19 @@ const TeacherForm = () => {
                   label="To"
                   onChange={e => setScheduleItemValue(index, 'to', e.target.value )}
                 />
-              </section>
+              </ScheduleItem>
             ))}
           </fieldset>
 
-          <footer>
+          <Footer>
             <p>
               <img src={warningIcon} alt="Warning" />
               Warning! <br/>
               Fill in all inputs
             </p>
 
-            <button type="submit">Salvar cadastro</button>
-          </footer>
+            <Button type="submit">Salvar cadastro</Button>
+          </Footer>
         </form>
       </Main>
     </Container>
