@@ -64,6 +64,10 @@ export const Main = styled.main`
     }
   }
 
+  div + .textarea {
+    margin-top: 2.4rem;
+  }
+
   label {
     color: var(--color-text-complement);
   }
