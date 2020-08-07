@@ -1,11 +1,16 @@
 import React from 'react'
 
-import whatsappIcon from 'assets/images/icons/whatsapp.svg'
+import api from 'services/api'
 
+import whatsappIcon from 'assets/images/icons/whatsapp.svg'
 import { Article } from './styles'
 
 const TeacherItem = ({ teacher }) => {
   const { subject, cost, name, avatar, whatsapp, bio } = teacher
+
+  const handleCreateConnection = () => {
+    api.post('/connections', { user_id: teacher.id })
+  }
 
   return (
     <Article>
@@ -26,10 +31,15 @@ const TeacherItem = ({ teacher }) => {
           <strong>R$ {cost}</strong>
         </p>
 
-        <button type="type">
+        <a
+          href={`https://api.WhatsApp.com/send?phone=${whatsapp}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={handleCreateConnection}
+        >
           <img src={whatsappIcon} alt="Whatsapp" />
           Entrar em contato
-        </button>
+        </a>
       </footer>
     </Article>
   )

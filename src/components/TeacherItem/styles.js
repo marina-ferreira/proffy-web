@@ -58,16 +58,17 @@ export const Article = styled.article`
       display: block;
     }
 
-    button {
-      width: 20rem;
+    a {
+      width: 22rem;
       height: 5.6rem;
       color: var(--color-button-text);
       border: 0;
       border-radius: .8rem;
       cursor: pointer;
-      font: 700 1.4rem Archivo;
+      font: 700 1.6rem Archivo;
       display: flex;
       align-items: center;
+      text-decoration: none;
       justify-content: space-evenly;
       transition: .2s;
       background: var(--color-secondary);
