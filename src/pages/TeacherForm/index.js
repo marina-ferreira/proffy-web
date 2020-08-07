@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
 import api from 'services/api'
 
@@ -23,6 +24,8 @@ const TeacherForm = () => {
     { week_day: '', from: '', to: '' }
   ])
 
+  const history = useHistory()
+
   const addScheduleItem = () => {
     setScheduleItems([...scheduleItems, { week_day: '', from: '', to: '' }])
   }
@@ -46,7 +49,10 @@ const TeacherForm = () => {
     }
 
     api.post('/classes', newClass)
-      .then(() => alert('Class was successfuly registered!'))
+      .then(() => {
+        alert('Class was successfuly registered!')
+        history.push('/')
+      })
       .catch(() => alert('Class could not be registered.'))
 
     console.log({ name, avatar, whatsapp, bio, subject, cost, scheduleItems })
