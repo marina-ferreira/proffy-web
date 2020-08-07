@@ -109,7 +109,7 @@ export const Main = styled.main`
       margin-top: 3.2rem;
 
       &:hover {
-        background: var(--color-secundary-dark);
+        background: var(--color-secondary-dark);
       }
     }
   }

@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+import api from 'services/api'
+
 import PageHeader from 'components/PageHeader'
 import Input from 'components/Input'
 import Textarea from 'components/Textarea'
@@ -32,6 +34,20 @@ const TeacherForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault()
+
+    const newClass = {
+      name,
+      avatar,
+      whatsapp,
+      bio,
+      subject,
+      cost: Number(cost),
+      schedule: scheduleItems
+    }
+
+    api.post('/classes', newClass)
+      .then(() => alert('Class was successfuly registered!'))
+      .catch(() => alert('Class could not be registered.'))
 
     console.log({ name, avatar, whatsapp, bio, subject, cost, scheduleItems })
   }
