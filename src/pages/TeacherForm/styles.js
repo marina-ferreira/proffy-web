@@ -52,7 +52,7 @@ export const Main = styled.main`
 
     button {
       color: var(--color-primary);
-      font: 700 1.6rem Archivo;
+      font: 500 1.6rem Archivo;
       cursor: pointer;
       transition: color 0.2s;
       border: none;
@@ -66,9 +66,6 @@ export const Main = styled.main`
 
   .Input + .Textarea,
   .Select + .Input {
-    margin-top: 2.4rem;
-  }
-
     margin-top: 2.4rem;
   }
 
@@ -120,6 +117,16 @@ export const Main = styled.main`
   @media (min-width: 700px) {
     fieldset {
       padding: 0 6.4rem;
+
+      > section {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        column-gap: 1.6rem;
+
+        .Select, .Input {
+          margin-top: 0 !important;
+        }
+      }
     }
 
     footer {
