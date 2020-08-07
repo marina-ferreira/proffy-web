@@ -9,12 +9,31 @@ import warningIcon from 'assets/images/icons/warning.svg'
 import { Container, Main } from './styles'
 
 const TeacherForm = () => {
+  const [name, setName] = useState('')
+  const [avatar, setAvatar] = useState('')
+  const [whatsapp, setWhatsapp] = useState('')
+  const [bio, setBio] = useState('')
+
+  const [subject, setSubject] = useState('')
+  const [cost, setCost] = useState('')
+
   const [scheduleItems, setScheduleItems] = useState([
     { week_day: '', from: '', to: '' }
   ])
 
   const addScheduleItem = () => {
     setScheduleItems([...scheduleItems, { week_day: '', from: '', to: '' }])
+  }
+
+  const setScheduleItemValue = (index, field, value) => {
+    const newItems = scheduleItems.map(item => ({ ...item, [field]: value }))
+    setScheduleItems([...newItems])
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault()
+
+    console.log({ name, avatar, whatsapp, bio, subject, cost, scheduleItems })
   }
 
   return (
@@ -25,14 +44,38 @@ const TeacherForm = () => {
       />
 
       <Main>
-        <form>
+        <form onSubmit={handleSubmit}>
           <fieldset>
             <legend>Your info</legend>
 
-            <Input type="text" name="name" label="Full Name" />
-            <Input type="text" name="avatar" label="Avatar" />
-            <Input type="text" name="whatsapp" label="Whatsapp" />
-            <Textarea name="bio" label="Bio" />
+            <Input
+              type="text"
+              name="name"
+              label="Full Name"
+              value={name}
+              onChange={e => setName(e.target.value)}
+            />
+            <Input
+              type="text"
+              name="avatar"
+              label="Avatar"
+              value={avatar}
+              onChange={e => setAvatar(e.target.value)}
+            />
+            <Input
+              type="text"
+              name="whatsapp"
+              label="Whatsapp"
+              value={whatsapp}
+              onChange={e => setWhatsapp(e.target.value)}
+            />
+
+            <Textarea
+              name="bio"
+              label="Bio"
+              value={bio}
+              onChange={e => setBio(e.target.value)}
+              />
           </fieldset>
 
           <fieldset>
@@ -41,6 +84,8 @@ const TeacherForm = () => {
             <Select
               name="subject"
               label="Subject"
+              value={subject}
+              onChange={e => setSubject(e.target.value)}
               options={[
                 { value: 'arts', label: 'Arts' },
                 { value: 'biology', label: 'Biology' },
@@ -50,7 +95,14 @@ const TeacherForm = () => {
                 { value: 'portuguese', label: 'Portuguese' }
               ]}
             />
-            <Input type="text" name="cost" label="Hour rate" />
+
+            <Input
+              type="text"
+              name="cost"
+              label="Hour rate"
+              value={cost}
+              onChange={e => setCost(e.target.value)}
+            />
           </fieldset>
 
           <fieldset>
@@ -66,6 +118,7 @@ const TeacherForm = () => {
                 <Select
                   name="week_day"
                   label="Week Day"
+                  onChange={e => setScheduleItemValue(index, 'week_day', e.target.value )}
                   options={[
                     { value: '0', label: 'Sunday' },
                     { value: '1', label: 'Monday' },
@@ -77,8 +130,18 @@ const TeacherForm = () => {
                   ]}
                 />
 
-                <Input type="time" name="from" label="From" />
-                <Input type="time" name="to" label="To" />
+                <Input
+                  type="time"
+                  name="from"
+                  label="From"
+                  onChange={e => setScheduleItemValue(index, 'from', e.target.value )}
+                />
+                <Input
+                  type="time"
+                  name="to"
+                  label="To"
+                  onChange={e => setScheduleItemValue(index, 'to', e.target.value )}
+                />
               </section>
             ))}
           </fieldset>
@@ -90,7 +153,7 @@ const TeacherForm = () => {
               Fill in all inputs
             </p>
 
-            <button type="button">Salvar cadastro</button>
+            <button type="submit">Salvar cadastro</button>
           </footer>
         </form>
       </Main>
