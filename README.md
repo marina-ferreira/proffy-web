@@ -5,9 +5,9 @@
 </h1>
 
 <p align="center">
-  <img alt="Node Version" src="https://img.shields.io/badge/node-~12.17.0-87c001?style=for-the-badge&logo=node.js">
-
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/marina-ferreira/proffy-web?style=for-the-badge&color=yellow&logo=javascript">
+
+  <img alt="Node Version" src="https://img.shields.io/badge/node-~12.17.0-87c001?style=for-the-badge&logo=node.js">
 
   <img alt="React Version" src="https://img.shields.io/badge/dynamic/json?color=01daff&url=https://raw.githubusercontent.com/marina-ferreira/proffy-web/master/package.json&query=$.dependencies.react&label=react&logo=react&style=for-the-badge">
 
