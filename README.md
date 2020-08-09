@@ -15,7 +15,7 @@
 
   <img alt="Styled Components Version" src="https://img.shields.io/badge/dynamic/json?color=de7aca&url=https://raw.githubusercontent.com/marina-ferreira/proffy-web/master/package.json&query=$.dependencies['styled-components']&label=styled-components&logo=styled-components&style=for-the-badge">
 
-  <img alt="Axios Version" src="https://img.shields.io/badge/dynamic/json?color=blueviolet&url=https://raw.githubusercontent.com/marina-ferreira/proffy-mobile/master/package.json&query=$.dependencies.axios&label=axios&logo=axios&style=for-the-badge">
+  <img alt="Axios Version" src="https://img.shields.io/badge/dynamic/json?color=blueviolet&url=https://raw.githubusercontent.com/marina-ferreira/proffy-web/master/package.json&query=$.dependencies.axios&label=axios&logo=axios&style=for-the-badge">
 
 </p>
 
