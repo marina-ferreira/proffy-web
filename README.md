@@ -27,8 +27,8 @@
 <br />
 
 <p align="center">
-  <img alt="Proffy Landing Page" align="center" width="60%" src="./.github/landing.jpg" style="margin: 0 5px 10px" />
-  <img alt="Proffy Study Page" width="48%" src="./.github/study.jpg" style="margin: 0 5px" />
+  <img alt="Proffy Landing Page" width="60%" src="./.github/landing.jpg" />
+  <img alt="Proffy Study Page" width="48%" src="./.github/study.jpg" />
   <img alt="Proffy Teach Page" width="48%" src="./.github/teach.jpg" />
 </p>
 <br />
